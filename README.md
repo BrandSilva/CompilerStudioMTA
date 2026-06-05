@@ -6,9 +6,9 @@
 
 **The most advanced and robust automatic compilation system for MTA:SA.**
 
-**FORUM:** [Automatic Compiler - MTA:SA](https://forum.multitheftauto.com/topic/146252-automatic-compiler/)
+**FORUM:** [Automatic Compiler - MTA:SA](https://forum.multitheftauto.com/topic/146252-automatic-compilation-tool-compilador-autom%C3%A1tico/)
 
-**VIDEO DEMO:** [[Watch on YouTube]](https://youtu.be/9wFm3R8jGxc)
+**VIDEO DEMO:** [[Watch on YouTube]](https://youtu.be/5dp938zfQqs)
 
 **DISCORD:** [Join the community](https://discord.gg/mjWuv7Zbyh)
 
@@ -162,7 +162,7 @@ The interface language is selectable live and synced between client and server.
 **Developer:** BranD - Trident Sky Company
 **Email:** tridentskycompany@gmail.com
 **Discord:** [discord.gg/mjWuv7Zbyh](https://discord.gg/mjWuv7Zbyh) (BrandSilva)
-**Forum:** [MTA:SA Forum Topic](https://forum.multitheftauto.com/topic/146252-automatic-compiler/)
+**Forum:** [MTA:SA Forum Topic](https://forum.multitheftauto.com/topic/146252-automatic-compilation-tool-compilador-autom%C3%A1tico/)
 
 ---
 
