@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler Studio v3.0</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window" id="window">
+        <div class="titlebar" id="titlebar">
+            <div class="titlebar-left">
+                <div class="title" data-lang="main-title">Compiler Studio v3.0</div>
+            </div>
+            <div class="titlebar-right">
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+                    <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+                    <button class="lang-btn" onclick="setLanguage('tr')">TR</button>
+                    <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="win-btn win-min" onclick="minimizePanel()" title="Minimize">&#8211;</button>
+                <button class="win-btn win-close" onclick="closePanel()" title="Close">&#10005;</button>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="col col-list">
+                <div class="col-head">
+                    <span class="col-title" data-lang="scripts-list-title">Resources</span>
+                    <span class="counter" id="selectionCounter">0</span>
+                    <button class="ghost-btn" onclick="refreshScriptsList()" data-lang="refresh-btn">Refresh</button>
+                </div>
+
+                <div class="search-wrap">
+                    <input type="text" class="search" id="searchInput" data-lang="search-placeholder" placeholder="Search resources..." oninput="filterScripts()">
+                </div>
+
+                <div class="list-toolbar">
+                    <label class="mini-check">
+                        <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                        <span data-lang="select-all">Select all</span>
+                    </label>
+                    <div class="filter-chips">
+                        <button class="filter-chip active" onclick="setStatusFilter('all', this)" data-lang="filter-all">All</button>
+                        <button class="filter-chip" onclick="setStatusFilter('compiled', this)" data-lang="status-compiled">Compiled</button>
+                        <button class="filter-chip" onclick="setStatusFilter('uncompiled', this)" data-lang="status-uncompiled">Uncompiled</button>
+                        <button class="filter-chip" onclick="setStatusFilter('protected', this)" data-lang="protect-on">Protected</button>
+                    </div>
+                </div>
+
+                <div class="list" id="scriptsList">
+                    <div class="empty" data-lang="no-scripts">No resources loaded</div>
+                </div>
+            </div>
+
+            <div class="col col-side">
+                <div class="card files-card">
+                    <div class="card-title">
+                        <span data-lang="files-title">Files</span>
+                        <span class="card-sub" id="currentResName">&mdash;</span>
+                    </div>
+                    <div class="files" id="filesList">
+                        <div class="empty small" data-lang="no-selection">Click a resource to preview its files</div>
+                    </div>
+                </div>
+
+                <div class="card options-card">
+                    <div class="card-title" data-lang="compilation-options-title">Options</div>
+
+                    <label class="toggle" for="compileClient">
+                        <input type="checkbox" id="compileClient" checked>
+                        <span class="toggle-box"></span>
+                        <span class="toggle-text" data-lang="compile-client">Compile client files</span>
+                    </label>
+
+                    <label class="toggle" for="compileServer">
+                        <input type="checkbox" id="compileServer">
+                        <span class="toggle-box"></span>
+                        <span class="toggle-text" data-lang="compile-server">Compile server files</span>
+                    </label>
+
+                    <label class="toggle" for="enableProtection">
+                        <input type="checkbox" id="enableProtection">
+                        <span class="toggle-box"></span>
+                        <span class="toggle-text">
+                            <span data-lang="enable-protection">Protect (cache=false)</span>
+                            <span class="hint" data-lang="protection-warning">Loads into RAM, slower download.</span>
+                        </span>
+                    </label>
+
+                    <label class="toggle" for="restartAfterCompile">
+                        <input type="checkbox" id="restartAfterCompile">
+                        <span class="toggle-box"></span>
+                        <span class="toggle-text" data-lang="restart-after-compile">Restart after compile</span>
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button class="primary-btn" id="compileBtn" onclick="showConfirmation('compileSelected')">
+                        <span data-lang="compile-selected-btn">Compile selected</span>
+                    </button>
+                    <button class="secondary-btn" onclick="showConfirmation('compileAll')" data-lang="compile-all-btn">Compile all server</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="statusbar" id="statusbar">
+            <div class="status-row">
+                <span class="status-dot" id="statusDot"></span>
+                <span class="status-text" id="statusText" data-lang="status-idle">Idle</span>
+            </div>
+            <div class="progress-track" id="progressTrack">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="footer" data-lang="copyright">© 2026 • BranD • Trident Sky Network</div>
+    </div>
+
+    <div class="modal" id="confirmationModal">
+        <div class="modal-box">
+            <div class="modal-title" id="modalTitle">Confirmation</div>
+            <div class="modal-msg" id="modalMessage"></div>
+            <div class="modal-actions">
+                <button class="modal-btn confirm" id="modalConfirm" onclick="confirmAction()">Accept</button>
+                <button class="modal-btn cancel" id="modalCancel" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
