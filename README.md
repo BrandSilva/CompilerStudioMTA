@@ -1,8 +1,8 @@
 # Compiler Studio for MTA:SA v3.0
 
 [![MTA:SA](https://img.shields.io/badge/MTA%3ASA-Compatible-blue)](https://multitheftauto.com/)
-[![Version](https://img.shields.io/badge/version-3.0-green)](https://github.com/TridentSky/CompilerStudioMTA)
-[![License](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/TridentSky/CompilerStudioMTA)
+[![Version](https://img.shields.io/badge/version-3.0-green)](https://github.com/BrandSilva/CompilerStudioMTA)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/BrandSilva/CompilerStudioMTA)
 
 **The most advanced and robust automatic compilation system for MTA:SA.**
 
